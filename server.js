@@ -6,7 +6,7 @@ const port = process.env.PORT || 3000;
 const app = express();
 
 // Handlebars setup
-hbs.registerPartials(__dirname + '/views/Partials');
+hbs.registerPartials(__dirname + '/views/partials');
 app.set('view engine', 'hbs');
 
 // Middleware //
@@ -44,6 +44,12 @@ app.get('/', (req, res) => {
 app.get('/about', (req, res) => {
   res.render('about.hbs', {
     pageTitle: 'About Page',
+  });
+});
+
+app.get('/projects', (rec, res) => {
+  res.render('projects.hbs', {
+    pageTitle: 'projects Page',
   });
 });
 
